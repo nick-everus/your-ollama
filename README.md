@@ -4,16 +4,14 @@ A minimal end-to-end multimodal AI demo that lets users upload an image and send
 
 This project runs entirely on your machine using Ollama and the LLaVA vision model — no cloud APIs, no keys, no cost.
 
-⸻
-
 ✨ Features
-	•	🖼️ Image upload (PNG / JPG / etc.)
-	•	💬 Text prompt input
-	•	🧠 Multimodal inference (image + text)
-	•	⚡ Local LLM via Ollama
-	•	🌐 Simple web UI
-	•	🔌 Node.js + Express backend
-	•	🔒 No external services required
+	🖼️ Image upload (PNG / JPG / etc.)
+	💬 Text prompt input
+	🧠 Multimodal inference (image + text)
+	⚡ Local LLM via Ollama
+	🌐 Simple web UI
+	🔌 Node.js + Express backend
+	🔒 No external services required
 
     
 📦 Install Ollama
