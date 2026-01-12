@@ -1,27 +1,63 @@
-🧠 Local Multimodal LLM Demo (Ollama + LLaVA)
+# 🦙 Your-Ollama
 
-A minimal end-to-end multimodal AI demo that lets users upload an image and send a text prompt to a local LLM for vision + language reasoning.
+**Your-Ollama** is a lightweight, fully local chatbot backend powered by **Ollama** and Python.  
+It lets you run large language models **entirely on your own machine** and exposes a simple HTTP API (and optional web UI) for chatting with them.
 
-This project runs entirely on your machine using Ollama and the LLaVA vision model — no cloud APIs, no keys, no cost.
+No cloud APIs. No keys. Your data never leaves your Mac.
 
-✨ Features
-	🖼️ Image upload (PNG / JPG / etc.)
-	💬 Text prompt input
-	🧠 Multimodal inference (image + text)
-	⚡ Local LLM via Ollama
-	🌐 Simple web UI
-	🔌 Node.js + Express backend
-	🔒 No external services required
+---
 
-    
-📦 Install Ollama
-https://ollama.com/download
-ollama pull llava
+## ✨ Features
 
-npm install ( if not already installed )
+- 🧠 Local LLM inference via **Ollama**
+- ⚡ FastAPI backend
+- 💬 Simple `/chat` HTTP endpoint
+- 🔌 Easily swap models (`llama3`, `mistral`, etc.)
+- 🧪 Ideal for experimentation, demos, and local AI workflows
 
-▶️ Run the App
-Start the server:
-PORT=3001 node server.js
-Open in your browser:
-http://localhost:3001
+---
+
+## 🧱 Architecture
+
+Client (Browser / curl / script)
+↓
+FastAPI (Python)
+↓
+Ollama local server
+↓
+LLM model (llama3, mistral, etc.)
+
+---
+
+## ✅ Prerequisites
+- Python **3.10+**
+- **Ollama** installed and running
+
+## Install Ollama
+If you don’t already have Ollama installed:
+```bash
+brew install ollama
+```
+Start the Ollama server:
+```bash
+ollama serve
+```
+Pull a model (example):
+```bash
+ollama pull llama3
+```
+### 🚀 Quick Start
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+pip install fastapi uvicorn requests
+python -m pip install --upgrade pip
+pip install fastapi uvicorn requests
+```
+Start the API server
+```bash
+uvicorn server:app --reload --host 127.0.0.1 --port 8000
+```
+The API will now be available at:
+http://127.0.0.1:8000/chat
